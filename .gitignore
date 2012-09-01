@@ -1,0 +1,4 @@
+config.mk
+.depend
+*.o
+l.cgi
