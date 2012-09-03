@@ -14334,7 +14334,7 @@ void setConfigDefaults(short int jazyk){
 
 // kedysi bolo void main;
 // 2003-07-14, kvoli gcc version 3.2.2 20030222 (Red Hat Linux 3.2.2-5) christ-net.sk 
-int main(int argc, char **argv){
+int breviar_main(int argc, char **argv){
 	short int i;
 
 	// 2011-04-20: naplnenie _global_system
@@ -15111,5 +15111,19 @@ _main_end:
 	closeLog();
 	return 0; // 2003-07-14, kvoli gcc version 3.2.2 20030222 (Red Hat Linux 3.2.2-5) christ-net.sk
 }
+
+#ifndef SKIP_MAIN
+int main(int argc, char **argv) {
+	int ret = breviar_main(argc, argv);
+
+#ifdef EXPORT_TO_STRING
+	char *result = getExportedString();
+	int resultLength = strlen(result);
+	fwrite(result, resultLength, 1, stdout);
+#endif
+
+	return ret;
+}
+#endif
 
 #endif // __BREVIAR_CPP_
