@@ -2,3 +2,5 @@ config.mk
 .depend
 *.o
 l.cgi
+project.xcworkspace
+xcuserdata
