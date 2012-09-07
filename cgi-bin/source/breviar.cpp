@@ -12460,6 +12460,7 @@ short int getArgv(int argc, char **argv){
 	 * 2011-04-13: upravenÈ (pridan· option 0 a odstr·nenÈ od ËÌsla 5 aû po 9)
 	 * 2011-05-06: upravenÈ (hodnota `F' ani `H' sa nepouûÌvali)
 	 *            `F' (font): moûnosù zvoliù font pre override CSS
+	 * 2012-09-07: 'H' (header) disables header and footer
 	 *
 	 */
 	mystrcpy(option_string, "?q::d::m::r::p::x::s::t::0::1::2::3::4::a::h::e::f::g::l::i::\?::b::n::o::k::j::c::u::M::I::H::F::S::", MAX_STR);
@@ -12672,6 +12673,11 @@ short int getArgv(int argc, char **argv){
 						mystrcpy(_global_export_navig_hore, DEFAULT_MONTH_EXPORT, SMALL);
 					}
 					Log("option %c with value `%s'\n", c, optarg); break;
+
+				case 'H':
+					_global_hlavicka_Export = 1;
+					_global_patka_Export = 1;
+					Log("option '%c'\n", c); break;
 
 				case '?':
 				case 'h':
