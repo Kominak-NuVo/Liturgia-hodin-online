@@ -16,6 +16,9 @@
 		7061B09F15FA8E1A00A83E0A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7061B09D15FA8E1A00A83E0A /* MainStoryboard_iPhone.storyboard */; };
 		7061B0A215FA8E1A00A83E0A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7061B0A015FA8E1A00A83E0A /* MainStoryboard_iPad.storyboard */; };
 		7061B0A515FA8E1A00A83E0A /* BRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7061B0A415FA8E1A00A83E0A /* BRViewController.m */; };
+		7061B0B115FAA18C00A83E0A /* BRPrayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7061B0B015FAA18C00A83E0A /* BRPrayerListViewController.m */; };
+		7061B0B515FAA34100A83E0A /* BRPrayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7061B0B415FAA34100A83E0A /* BRPrayerViewController.m */; };
+		7061B0B815FAA3C500A83E0A /* BRPrayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7061B0B715FAA3C500A83E0A /* BRPrayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,12 @@
 		7061B0A115FA8E1A00A83E0A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		7061B0A315FA8E1A00A83E0A /* BRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BRViewController.h; sourceTree = "<group>"; };
 		7061B0A415FA8E1A00A83E0A /* BRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BRViewController.m; sourceTree = "<group>"; };
+		7061B0AF15FAA18C00A83E0A /* BRPrayerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPrayerListViewController.h; sourceTree = "<group>"; };
+		7061B0B015FAA18C00A83E0A /* BRPrayerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPrayerListViewController.m; sourceTree = "<group>"; };
+		7061B0B315FAA34100A83E0A /* BRPrayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPrayerViewController.h; sourceTree = "<group>"; };
+		7061B0B415FAA34100A83E0A /* BRPrayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPrayerViewController.m; sourceTree = "<group>"; };
+		7061B0B615FAA3C500A83E0A /* BRPrayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRPrayer.h; sourceTree = "<group>"; };
+		7061B0B715FAA3C500A83E0A /* BRPrayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRPrayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +88,11 @@
 		7061B09115FA8E1A00A83E0A /* Breviar */ = {
 			isa = PBXGroup;
 			children = (
+				7061B0B915FAA3D200A83E0A /* Model */,
+				7061B0BB15FAA3EE00A83E0A /* View */,
+				7061B0BA15FAA3DA00A83E0A /* Controller */,
 				7061B09A15FA8E1A00A83E0A /* BRAppDelegate.h */,
 				7061B09B15FA8E1A00A83E0A /* BRAppDelegate.m */,
-				7061B09D15FA8E1A00A83E0A /* MainStoryboard_iPhone.storyboard */,
-				7061B0A015FA8E1A00A83E0A /* MainStoryboard_iPad.storyboard */,
-				7061B0A315FA8E1A00A83E0A /* BRViewController.h */,
-				7061B0A415FA8E1A00A83E0A /* BRViewController.m */,
 				7061B09215FA8E1A00A83E0A /* Supporting Files */,
 			);
 			path = Breviar;
@@ -99,6 +107,37 @@
 				7061B09915FA8E1A00A83E0A /* Breviar-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7061B0B915FAA3D200A83E0A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7061B0B615FAA3C500A83E0A /* BRPrayer.h */,
+				7061B0B715FAA3C500A83E0A /* BRPrayer.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7061B0BA15FAA3DA00A83E0A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7061B0A315FA8E1A00A83E0A /* BRViewController.h */,
+				7061B0A415FA8E1A00A83E0A /* BRViewController.m */,
+				7061B0AF15FAA18C00A83E0A /* BRPrayerListViewController.h */,
+				7061B0B015FAA18C00A83E0A /* BRPrayerListViewController.m */,
+				7061B0B315FAA34100A83E0A /* BRPrayerViewController.h */,
+				7061B0B415FAA34100A83E0A /* BRPrayerViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7061B0BB15FAA3EE00A83E0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7061B09D15FA8E1A00A83E0A /* MainStoryboard_iPhone.storyboard */,
+				7061B0A015FA8E1A00A83E0A /* MainStoryboard_iPad.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +207,9 @@
 				7061B09815FA8E1A00A83E0A /* main.m in Sources */,
 				7061B09C15FA8E1A00A83E0A /* BRAppDelegate.m in Sources */,
 				7061B0A515FA8E1A00A83E0A /* BRViewController.m in Sources */,
+				7061B0B115FAA18C00A83E0A /* BRPrayerListViewController.m in Sources */,
+				7061B0B515FAA34100A83E0A /* BRPrayerViewController.m in Sources */,
+				7061B0B815FAA3C500A83E0A /* BRPrayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +335,7 @@
 				7061B0AA15FA8E1A00A83E0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
