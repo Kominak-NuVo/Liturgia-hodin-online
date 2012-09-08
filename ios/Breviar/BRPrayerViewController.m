@@ -43,6 +43,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	self.navigationItem.title = self.prayer.title;
+	[self.webView loadHTMLString:self.prayer.body baseURL:[NSURL URLWithString:@"http://breviar.sk"]];
 }
 
 @end

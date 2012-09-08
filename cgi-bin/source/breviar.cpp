@@ -12526,7 +12526,7 @@ short int getArgv(int argc, char **argv){
 					Log("option %c with value `%s' -- binary executable name `%s' used for batch mode\n", c, optarg, optarg); break;
 				case 'i': // pridane 05/06/2000A.D., include_dir
 					if(optarg != NULL){
-						mystrcpy(include_dir, optarg, SMALL);
+						mystrcpy(include_dir, optarg, MAX_STR); /* 2012-09-08 This string can be quite long on iOS */
 					}
 					Log("option %c with value `%s' -- including files from `%s'\n", c, optarg, optarg /* 2004-03-17 zapoznamkovane FILE_PATH */); break;
 				case 'f': // tabulka - rok from; pre batch mode je to DEN DO

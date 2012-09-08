@@ -10,5 +10,6 @@
 #import "BRPrayer.h"
 
 @interface BRPrayerViewController : UIViewController
-@property(nonatomic,retain) BRPrayer *prayer;
+@property(strong) BRPrayer *prayer;
+@property(strong) IBOutlet UIWebView *webView;
 @end

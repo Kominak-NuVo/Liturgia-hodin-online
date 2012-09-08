@@ -8,7 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+	BRInvitatory = 0,
+	BROfficeOfReadings,
+	BRMorningPrayer,
+	BRMidMorningPrayer,
+	BRMiddayPrayer,
+	BRMidAfternoonPrayer,
+	BREveningPrayer,
+	BRCompline
+} BRPrayerType;
+
 @interface BRPrayer : NSObject
-@property(nonatomic,retain) NSString *title;
-@property(nonatomic,retain) NSString *body;
+
+@property BRPrayerType prayerType;
+@property(strong) NSString *title;
+@property(strong) NSString *body;
+
++ (BRPrayer *)prayerWithType:(BRPrayerType)prayerType date:(NSDate *)date;
 @end

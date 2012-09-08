@@ -41,9 +41,41 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	BRPrayerViewController *destController = segue.destinationViewController;
-	BRPrayer *prayer = [[BRPrayer alloc] init];
-	prayer.title = segue.identifier;
-	destController.prayer = prayer;
+	
+	// Get prayer type
+	NSString *segueId = segue.identifier;
+	BRPrayerType prayerType = BRInvitatory;
+	
+	if ([segueId isEqualToString:@"ShowInvitatory"]) {
+		prayerType = BRInvitatory;
+	}
+	else if ([segueId isEqualToString:@"ShowOfficeOfReadings"]) {
+		prayerType = BROfficeOfReadings;
+	}
+	else if ([segueId isEqualToString:@"ShowMorningPrayer"]) {
+		prayerType = BRMorningPrayer;
+	}
+	else if ([segueId isEqualToString:@"ShowMidMorningPrayer"]) {
+		prayerType = BRMidMorningPrayer;
+	}
+	else if ([segueId isEqualToString:@"ShowMiddayPrayer"]) {
+		prayerType = BRMiddayPrayer;
+	}
+	else if ([segueId isEqualToString:@"ShowMidAfternoonPrayer"]) {
+		prayerType = BRMidAfternoonPrayer;
+	}
+	else if ([segueId isEqualToString:@"ShowEveningPrayer"]) {
+		prayerType = BREveningPrayer;
+	}
+	else if ([segueId isEqualToString:@"ShowCompline"]) {
+		prayerType = BRCompline;
+	}
+	else {
+		NSLog(@"Unknown prayer type: %@", segueId);
+	}
+	
+	// Generate prayer
+	destController.prayer = [BRPrayer prayerWithType:prayerType date:[NSDate date]];
 }
 
 @end
