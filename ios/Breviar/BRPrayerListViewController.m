@@ -9,6 +9,18 @@
 #import "BRPrayerListViewController.h"
 #import "BRPrayerViewController.h"
 
+static NSString *prayerSegues[] = {
+	[BRInvitatory]         = @"ShowInvitatory",
+	[BROfficeOfReadings]   = @"ShowOfficeOfReadings",
+	[BRMorningPrayer]      = @"ShowMorningPrayer",
+	[BRMidMorningPrayer]   = @"ShowMidMorningPrayer",
+	[BRMiddayPrayer]       = @"ShowMiddayPrayer",
+	[BRMidAfternoonPrayer] = @"ShowMidAfternoonPrayer",
+	[BREveningPrayer]      = @"ShowEveningPrayer",
+	[BRCompline]           = @"ShowCompline",
+	nil
+};
+
 @interface BRPrayerListViewController ()
 
 @end
@@ -27,6 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	self.date = [NSDate date];
 }
 
 - (void)viewDidUnload
@@ -34,48 +47,49 @@
     [super viewDidUnload];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	formatter.dateStyle = NSDateFormatterLongStyle;
+	formatter.timeStyle = NSDateFormatterNoStyle;
+	
+	self.dateLabel.text = [formatter stringFromDate:self.date];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	BRPrayerViewController *destController = segue.destinationViewController;
-	
-	// Get prayer type
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{	
 	NSString *segueId = segue.identifier;
-	BRPrayerType prayerType = BRInvitatory;
 	
-	if ([segueId isEqualToString:@"ShowInvitatory"]) {
-		prayerType = BRInvitatory;
-	}
-	else if ([segueId isEqualToString:@"ShowOfficeOfReadings"]) {
-		prayerType = BROfficeOfReadings;
-	}
-	else if ([segueId isEqualToString:@"ShowMorningPrayer"]) {
-		prayerType = BRMorningPrayer;
-	}
-	else if ([segueId isEqualToString:@"ShowMidMorningPrayer"]) {
-		prayerType = BRMidMorningPrayer;
-	}
-	else if ([segueId isEqualToString:@"ShowMiddayPrayer"]) {
-		prayerType = BRMiddayPrayer;
-	}
-	else if ([segueId isEqualToString:@"ShowMidAfternoonPrayer"]) {
-		prayerType = BRMidAfternoonPrayer;
-	}
-	else if ([segueId isEqualToString:@"ShowEveningPrayer"]) {
-		prayerType = BREveningPrayer;
-	}
-	else if ([segueId isEqualToString:@"ShowCompline"]) {
-		prayerType = BRCompline;
-	}
-	else {
-		NSLog(@"Unknown prayer type: %@", segueId);
+	// Prayer segues
+	int i;
+	for (i=0; prayerSegues[i]; i++) {
+		if ([segueId isEqualToString:prayerSegues[i]]) {
+			BRPrayerType prayerType = (BRPrayerType)i;
+			BRPrayerViewController *destController = segue.destinationViewController;
+			destController.prayer = [BRPrayer prayerWithType:prayerType date:self.date];
+			return;
+		}
 	}
 	
-	// Generate prayer
-	destController.prayer = [BRPrayer prayerWithType:prayerType date:[NSDate date]];
+	// Other segues
+	if ([segueId isEqualToString:@"ShowDatePicker"]) {
+		BRDatePickerViewController *destController = segue.destinationViewController;
+		destController.initialDate = self.date;
+		destController.datePickerDelegate = self;
+	}
+}
+
+- (void)datePicker:(BRDatePickerViewController *)datePicker pickedDate:(NSDate *)date
+{
+	self.date = date;
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 @end

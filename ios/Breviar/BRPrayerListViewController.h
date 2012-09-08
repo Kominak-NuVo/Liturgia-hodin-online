@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BRDatePickerViewController.h"
 
-@interface BRPrayerListViewController : UITableViewController
-
+@interface BRPrayerListViewController : UITableViewController <BRDatePickerDelegate>
+@property(strong) NSDate *date;
+@property(strong) IBOutlet UILabel *dateLabel;
 @end
