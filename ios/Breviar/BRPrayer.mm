@@ -64,7 +64,6 @@ static NSString *prayerQueryIds[] = {
 	};
 	breviar_main(argc, (char **)argv);
 	
-	// (TODO: show HTML header/footer and CSS)
 	prayer.body = [NSString stringWithCString:getExportedString() encoding:NSWindowsCP1250StringEncoding];
 	
 	return prayer;

@@ -7,6 +7,7 @@
 //
 
 #import "BRPrayerViewController.h"
+#import "BRSettings.h"
 
 @interface BRPrayerViewController ()
 
@@ -43,7 +44,22 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	self.navigationItem.title = self.prayer.title;
-	[self.webView loadHTMLString:self.prayer.body baseURL:[NSURL URLWithString:@"http://breviar.sk"]];
+	
+	BRSettings *settings = [BRSettings instance];
+	
+	NSString *body =
+		[NSString stringWithFormat:
+		 @"<!DOCTYPE html>\n"
+		 "<html><head>\n"
+		 "	<meta http-equiv='Content-Type' content='text/html; charset=windows-1250'>\n"
+		 "</head>\n"
+		 "<body style='font: %dpx %@'>%@</body>\n"
+		 "</html>",
+		 settings.prayerFontSize,
+		 settings.prayerFontFamily,
+		 self.prayer.body];
+	
+	[self.webView loadHTMLString:body baseURL:[NSURL URLWithString:@"http://breviar.sk"]];
 }
 
 @end

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7034597D15FCE84D000A1711 /* BRFontHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7034597C15FCE84D000A1711 /* BRFontHelper.m */; };
 		7054368D15FBDD69005854DC /* BRDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7054368C15FBDD69005854DC /* BRDatePickerViewController.m */; };
+		7054369115FBF1B1005854DC /* BRSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7054369015FBF1B1005854DC /* BRSettingsViewController.m */; };
+		7054369415FBF1D1005854DC /* BRFontPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7054369315FBF1D0005854DC /* BRFontPickerViewController.m */; };
 		7061B08C15FA8E1A00A83E0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7061B08B15FA8E1A00A83E0A /* UIKit.framework */; };
 		7061B08E15FA8E1A00A83E0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7061B08D15FA8E1A00A83E0A /* Foundation.framework */; };
 		7061B09015FA8E1A00A83E0A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7061B08F15FA8E1A00A83E0A /* CoreGraphics.framework */; };
@@ -32,11 +35,18 @@
 		7061B0DC15FB929300A83E0A /* myhpage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7061B0CF15FB929300A83E0A /* myhpage.cpp */; };
 		7061B0DD15FB929300A83E0A /* mylog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7061B0D115FB929300A83E0A /* mylog.cpp */; };
 		7061B0E015FB932000A83E0A /* mystring.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7061B0DE15FB932000A83E0A /* mystring.cpp */; };
+		70AAAA4E15FBFBE4008D314D /* BRSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 70AAAA4D15FBFBE4008D314D /* BRSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7034597B15FCE84D000A1711 /* BRFontHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRFontHelper.h; sourceTree = "<group>"; };
+		7034597C15FCE84D000A1711 /* BRFontHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRFontHelper.m; sourceTree = "<group>"; };
 		7054368B15FBDD69005854DC /* BRDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDatePickerViewController.h; sourceTree = "<group>"; };
 		7054368C15FBDD69005854DC /* BRDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDatePickerViewController.m; sourceTree = "<group>"; };
+		7054368F15FBF1B1005854DC /* BRSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSettingsViewController.h; sourceTree = "<group>"; };
+		7054369015FBF1B1005854DC /* BRSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSettingsViewController.m; sourceTree = "<group>"; };
+		7054369215FBF1D0005854DC /* BRFontPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRFontPickerViewController.h; sourceTree = "<group>"; };
+		7054369315FBF1D0005854DC /* BRFontPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRFontPickerViewController.m; sourceTree = "<group>"; };
 		7061B08715FA8E1A00A83E0A /* Breviar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breviar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7061B08B15FA8E1A00A83E0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		7061B08D15FA8E1A00A83E0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,6 +91,8 @@
 		7061B0D215FB929300A83E0A /* mylog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mylog.h; path = "../../cgi-bin/source/mylog.h"; sourceTree = "<group>"; };
 		7061B0DE15FB932000A83E0A /* mystring.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mystring.cpp; path = "../../cgi-bin/source/mystring.cpp"; sourceTree = "<group>"; };
 		7061B0DF15FB932000A83E0A /* mystring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mystring.h; path = "../../cgi-bin/source/mystring.h"; sourceTree = "<group>"; };
+		70AAAA4C15FBFBE4008D314D /* BRSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRSettings.h; sourceTree = "<group>"; };
+		70AAAA4D15FBFBE4008D314D /* BRSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRSettings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7034597915FCE81A000A1711 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				70AAAA4C15FBFBE4008D314D /* BRSettings.h */,
+				70AAAA4D15FBFBE4008D314D /* BRSettings.m */,
+				7034597B15FCE84D000A1711 /* BRFontHelper.h */,
+				7034597C15FCE84D000A1711 /* BRFontHelper.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		7061B07C15FA8E1A00A83E0A = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +153,7 @@
 				7061B0B915FAA3D200A83E0A /* Model */,
 				7061B0BB15FAA3EE00A83E0A /* View */,
 				7061B0BA15FAA3DA00A83E0A /* Controller */,
+				7034597915FCE81A000A1711 /* Utilities */,
 				7061B09A15FA8E1A00A83E0A /* BRAppDelegate.h */,
 				7061B09B15FA8E1A00A83E0A /* BRAppDelegate.m */,
 				7061B09215FA8E1A00A83E0A /* Supporting Files */,
@@ -169,6 +193,10 @@
 				7054368C15FBDD69005854DC /* BRDatePickerViewController.m */,
 				7061B0B315FAA34100A83E0A /* BRPrayerViewController.h */,
 				7061B0B415FAA34100A83E0A /* BRPrayerViewController.m */,
+				7054368F15FBF1B1005854DC /* BRSettingsViewController.h */,
+				7054369015FBF1B1005854DC /* BRSettingsViewController.m */,
+				7054369215FBF1D0005854DC /* BRFontPickerViewController.h */,
+				7054369315FBF1D0005854DC /* BRFontPickerViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -313,6 +341,10 @@
 				7061B0DD15FB929300A83E0A /* mylog.cpp in Sources */,
 				7061B0E015FB932000A83E0A /* mystring.cpp in Sources */,
 				7054368D15FBDD69005854DC /* BRDatePickerViewController.m in Sources */,
+				7054369115FBF1B1005854DC /* BRSettingsViewController.m in Sources */,
+				7054369415FBF1D1005854DC /* BRFontPickerViewController.m in Sources */,
+				70AAAA4E15FBFBE4008D314D /* BRSettings.m in Sources */,
+				7034597D15FCE84D000A1711 /* BRFontHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
