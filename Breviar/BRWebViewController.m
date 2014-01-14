@@ -44,7 +44,9 @@
 		[extraStylesheets appendString:@"<link rel='stylesheet' type='text/css' href='html/breviar-invert-colors.css'>"];
         self.view.backgroundColor = [UIColor colorWithHex:0x333333];
         self.webView.scrollView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
-	}
+    } else {
+        self.view.backgroundColor = [UIColor colorWithHex:0xFBFCD7];
+    }
 	
 	NSString *body =
 	[NSString stringWithFormat:
